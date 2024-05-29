@@ -1,0 +1,23 @@
+project-api/target/
+project-api/!.mvn/wrapper/maven-wrapper.jar
+project-api/!**/src/main/**/target/
+project-api/!**/src/test/**/target/
+
+### STS ###
+project-api/.apt_generated
+project-api/.classpath
+project-api/.factorypath
+project-api/.project
+project-api/.settings
+project-api/.springBeans
+project-api/.sts4-cache
+
+### IntelliJ IDEA ###
+project-api/.idea
+project-api/*.iws
+project-api/*.iml
+*.ipr
+.idea
+*.iws
+*.iml
+*.ipr
