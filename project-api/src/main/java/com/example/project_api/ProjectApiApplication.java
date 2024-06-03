@@ -22,12 +22,12 @@ public class ProjectApiApplication {
 	}
 
 	@PostMapping("/projects")
-	public ProjectController.Project postProjects(@RequestBody ProjectController.Project body) {
+	public Project postProjects(@RequestBody Project body) {
 		return projectController.addProjects(body);
 	}
 
 	@GetMapping("/projects")
-	public List<ProjectController.Project> getProjects() {
+	public List<Project> getProjects() {
 		return projectController.getProjects();
 	}
 
