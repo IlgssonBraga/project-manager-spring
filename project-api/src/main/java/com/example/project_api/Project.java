@@ -1,12 +1,14 @@
 package com.example.project_api;
 
+import DTOs.Status;
+
 import java.util.Date;
 
 public class Project {
     private Integer id;
     private String name;
     private String description;
-    private ProjectService.Status status;
+    private Status status;
     private Date beginDate;
     private Date endDate;
     public Project() {
@@ -28,7 +30,7 @@ public class Project {
         return description;
     }
 
-    public ProjectService.Status getStatus() {
+    public Status getStatus() {
         return status;
     }
 
@@ -52,7 +54,7 @@ public class Project {
         this.description = description;
     }
 
-    public void setStatus(ProjectService.Status status) {
+    public void setStatus(Status status) {
         this.status = status;
     }
 
