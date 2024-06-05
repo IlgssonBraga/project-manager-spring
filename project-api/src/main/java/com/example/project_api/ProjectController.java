@@ -1,4 +1,5 @@
 package com.example.project_api;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,11 +9,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class ProjectController {
-    private final ProjectService projectService;
 
-    ProjectController(ProjectService projectService ){
-        this.projectService = new ProjectService();
-    }
+    @Autowired
+    private ProjectService projectService;
 
     @GetMapping("/projects")
     public List<Project> getProjects() {
@@ -20,10 +19,10 @@ public class ProjectController {
     }
 
     @PostMapping("/projects")
-    public Project addProjects(@RequestBody Project body) {
+    public Project addProjects(@RequestBody Project project) {
 
-        this.projectService.create(body);
+        this.projectService.create(project);
 
-        return body;
+        return project;
     }
 }

@@ -1,37 +1,35 @@
 package com.example.project_api;
 
 import DTOs.Status;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
+@Entity
 public class Project {
-    private Integer id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String name;
     private String description;
     private Status status;
     private Date beginDate;
     private Date endDate;
-    public Project() {
-    }
 
-    public Project(String title) {
-        this.name = title;
-    }
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public Status getStatus() {
+        return status;
     }
 
     public String getDescription() {
         return description;
     }
 
-    public Status getStatus() {
-        return status;
+    public String getName() {
+        return name;
     }
 
     public Date getBeginDate() {
@@ -42,8 +40,12 @@ public class Project {
         return endDate;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setBeginDate(Date beginDate) {
+        this.beginDate = beginDate;
     }
 
     public void setName(String name) {
@@ -54,15 +56,11 @@ public class Project {
         this.description = description;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
-    public void setBeginDate(Date beginDate) {
-        this.beginDate = beginDate;
-    }
-
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 }
