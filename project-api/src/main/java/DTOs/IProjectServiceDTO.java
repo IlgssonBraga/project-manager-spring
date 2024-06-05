@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface IProjectServiceDTO {
     List<Project> findAll();
-    void create(Project body);
-    List<Project> projects = List.of();
+    void save(Project body);
+    List<Project> findById(Long id);
+    void deleteById(Long id);
 }
